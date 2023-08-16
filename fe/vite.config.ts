@@ -10,5 +10,5 @@ export default defineConfig({
 	preview:{
 		port:9001,
 		strictPort:false,
-	}
+	}	
 });
