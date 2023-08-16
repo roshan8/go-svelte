@@ -12,3 +12,7 @@ HOST=0.0.0.0 PORT=9000 npm run dev
 ```
 
 ## BE
+```sh
+cd be
+go run main.dev
+```

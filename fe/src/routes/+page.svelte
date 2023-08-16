@@ -1,4 +1,26 @@
 <script>
+	import { onMount } from 'svelte';
+
+	let message = "ola"
+    
+	onMount(async () => {
+		console.log("onMount")
+
+		try {
+			const response = await fetch("http://localhost:8080/")
+			if (response.ok) {
+					const data = await response.json()
+					console.log(data)
+					message = data["name"]
+			} else {
+					message = "error"
+			}
+		} catch (error) {
+			console.error("Error fetching data", error)
+		}
+	});
+
+
 </script>
 
 <svelte:head>
@@ -8,7 +30,7 @@
 
 <section>
 	<h1>
-		hey!
+		Hey {message}!
 	</h1>
 </section>
 
@@ -24,5 +46,5 @@
 	h1 {
 		width: 100%;
 	}
-	
+
 </style>
