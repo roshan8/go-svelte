@@ -30,6 +30,7 @@ func startServer() {
 		MaxAge:           300, // Maximum value not ignored by any of major browsers
 	}))
 
+	r.Get("/*", ServeFrontendHandler)
 	r.Get("/api", func(w http.ResponseWriter, r *http.Request) {
 		data := map[string]interface{}{
 			"name": "Roshan",

@@ -47,7 +47,7 @@ func ServeFrontendHandler(w http.ResponseWriter, r *http.Request) {
 
 func init() {
 	var err error
-	frontendFs, err = fs.Sub(Frontend, "_frontend/build")
+	frontendFs, err = fs.Sub(Frontend, "fe/build")
 	if err != nil {
 		log.Fatal("failed to get frontend fs", err)
 	}
