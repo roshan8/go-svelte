@@ -11,9 +11,9 @@ export default defineConfig({
 	// 	port:9001,
 	// 	strictPort:false,
 	// },
-	// server: {
-	// 	proxy: {
-	// 		'/api': 'http://localhost:9080',
-	// 	},
-	// },	
+	server: {
+		proxy: {
+			'/': 'http://localhost:9080',
+		},
+	},	
 });

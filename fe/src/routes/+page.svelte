@@ -7,7 +7,7 @@
 		console.log("onMount")
 
 		try {
-			const response = await fetch("http://localhost:9080/api")
+			const response = await fetch("/api")
 			if (response.ok) {
 					const data = await response.json()
 					console.log(data)
