@@ -4,6 +4,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
@@ -28,7 +29,8 @@ func startServer() {
 		AllowCredentials: false,
 		MaxAge:           300, // Maximum value not ignored by any of major browsers
 	}))
-	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
+
+	r.Get("/api", func(w http.ResponseWriter, r *http.Request) {
 		data := map[string]interface{}{
 			"name": "Roshan",
 		}
@@ -37,5 +39,7 @@ func startServer() {
 		w.Header().Set("Content-Type", "application/json")
 		w.Write(jData)
 	})
-	http.ListenAndServe(":8080", r)
+
+	fmt.Println("Starting server on port 9080...")
+	http.ListenAndServe(":9080", r)
 }
